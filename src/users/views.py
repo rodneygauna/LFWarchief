@@ -28,7 +28,7 @@ def register_user():
         # Checks if email is already registered
         if User.query.filter_by(email=form.email.data).first():
             flash('Email already registered.')
-            return redirect(url_for('users.register'))
+            return redirect(url_for('users.register_user'))
 
         # Commits new user's data to the database
         user = User(email=form.email.data,
