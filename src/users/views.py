@@ -106,7 +106,6 @@ def account():
     elif request.method == 'GET':
         form.username.data = current_user.username
         form.email.data = current_user.email
-        form.website.data = current_user.website
 
     profile_image = url_for(
         'static', filename='profile_pics/' + current_user.profile_image)
