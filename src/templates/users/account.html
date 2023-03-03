@@ -1,9 +1,5 @@
 {% extends "base.html" %} {% block content %}
 <!-- User profile section -->
-<a href="{{url_for('users.macro_sets', username=current_user.username)}}"
-  >{{current_user.username}}</a
->
-<br />
 <img
   class=""
   src="{{url_for('static',filename='profile_pics/' + current_user.profile_image)}}"
@@ -14,11 +10,8 @@
 
 <form method="POST" enctype="multipart/form-data">
   {{form.hidden_tag()}} {{form.username.label}}{{form.username}}
-  {{form.email.label}}{{form.email}} {{form.firstname.label}}{{form.firstname}}
-  {{form.lastname.label}}{{form.lastname}}
-  {{form.businessname.label}}{{form.businessname}}
-  {{form.biography.label}}{{form.biography}}
-  {{form.website.label}}{{form.website}} {{form.picture.label}}{{form.picture}}
+  {{form.email.label}}{{form.email}} {{form.picture.label}}{{form.picture}}
+  <br />
   {{form.submit(class='button-primary')}}
 </form>
 <!-- End User profile section -->
