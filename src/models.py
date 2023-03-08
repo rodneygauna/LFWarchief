@@ -42,3 +42,19 @@ class User(db.Model, UserMixin):
 
     def __repr__(self):
         return f"Username: {self.username}"
+
+
+# Model - User B.Net Accounts
+class UserBNetAccount(db.Model):
+    '''User's Battle.Net Accounts'''
+
+    __tablename__ = 'user_bnet_accounts'
+
+    id = db.Column(db.Integer, primary_key=True)
+    user_id = db.Column(db.Integer, db.ForeitnKey('users.id'))
+    wc2_account = db.Column(db.Text)
+    battle_net_account = db.Column(db.Text)
+    created_date = db.Column(
+            db.DateTime, nullable+False, default=datetime.utcnow)
+    updated_date = db.Column(db.DateTime, default=datetime.utcnow)
+
