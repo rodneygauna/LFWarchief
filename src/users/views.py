@@ -1,5 +1,5 @@
 '''
-Vies for the user blueprint
+Views for the user blueprint
 '''
 
 
