@@ -51,10 +51,9 @@ class UserBNetAccount(db.Model):
     __tablename__ = 'user_bnet_accounts'
 
     id = db.Column(db.Integer, primary_key=True)
-    user_id = db.Column(db.Integer, db.ForeitnKey('users.id'))
+    user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
     wc2_account = db.Column(db.Text)
     battle_net_account = db.Column(db.Text)
     created_date = db.Column(
-            db.DateTime, nullable+False, default=datetime.utcnow)
+        db.DateTime, nullable=False, default=datetime.utcnow)
     updated_date = db.Column(db.DateTime, default=datetime.utcnow)
-
